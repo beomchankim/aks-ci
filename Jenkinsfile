@@ -45,7 +45,7 @@ pipeline {
         stage('Login') {
             steps {
                 echo 'Login'
-                sh 'docker login -u ${DOCKER_ID} -p ${DOCKER_PASSWORD}'
+                sh 'docker login ${ACR_LOGINSERVER} -u ${ACR_ID} -p ${ACR_PASSWORD}'
             }
             post {
                 success {
